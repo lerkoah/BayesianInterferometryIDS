@@ -1,5 +1,5 @@
 import numpy as np
-import cv2
+# import cv2
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.image as mpimg
@@ -202,28 +202,7 @@ def UVCreator(imgFFT,uv_matrix_bin):
 	M = uv_matrix_bin*imgFFT;
 	return M,U,V
 
-def createSpectrumMasking(img, B_max,antennas,typeArray,sigma, lambda_phy, H0, delta0, Lat):
-	imgFFT = np.fft.fft2(img)
-	imgFFT = np.fft.fftshift(imgFFT)
-
-	# print type(imgFFT)
-	# print imgFFT.shape
-	# print type(img)
-	magnitudSpectrum = 20*np.log(np.abs(imgFFT))
-	# plt.imshow(magnitudSpectrum, cmap = 'gray')
-	# plt.show()
-
-	(N1,N2) = img.shape
-	#Size Inputs
-	# N1 = 256
-	# N2 = 256
-
-	## Position of antennas
-	# B_max = 1
-	# antennas = 60
-	# typeArray = 'VLA'
-	# sigma = B_max/6
-
+def createSpectrumMasking(B_max,antennas,typeArray,sigma, lambda_phy, H0, delta0, Lat, N1 = 256, N2 = 256):
 	(positions,BMax) = antennas_position2(antennas,B_max,typeArray,sigma)
 	# print "positions = \n"+ str(positions)
 	# print "BMax = "+str(BMax)

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="477d8f72-c2f4-4ef9-b06b-b2c74b68cbfc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/modelfunctions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FFTmaker.py" afterPath="$PROJECT_DIR$/src/FFTmaker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ex.py" afterPath="$PROJECT_DIR$/src/ex.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interferometry2.py" afterPath="$PROJECT_DIR$/src/interferometry2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interferometryTHEANO.py" afterPath="$PROJECT_DIR$/src/interferometryTHEANO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/masking.py" afterPath="$PROJECT_DIR$/src/masking.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main_bay_int.ipynb" afterPath="$PROJECT_DIR$/src/main_bay_int.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interferometry2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="interferometry2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interferometry2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
@@ -49,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelfunctions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="modelfunctions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modelfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="174">
+              <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -62,7 +55,7 @@
       <file leaf-file-name="masking.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/masking.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2210">
+            <state relative-caret-position="52">
               <caret line="194" column="32" lean-forward="false" selection-start-line="194" selection-start-column="32" selection-end-line="194" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -415,9 +408,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/interferometry2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/masking.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2210">
+        <state relative-caret-position="52">
           <caret line="194" column="32" lean-forward="false" selection-start-line="194" selection-start-column="32" selection-end-line="194" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -427,19 +430,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="174">
+          <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="93" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interferometry2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

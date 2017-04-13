@@ -10,12 +10,12 @@ def psi(x, y, l, Cx, Cy):
 
 # Real part of basis function
 def phiRe(u, v, l, Cx, Cy):
-    return np.exp(-2.0 * PI * (u * u + v * v) * l * l) * np.cos(2.0 * PI * (Cx * u + Cy * v))
+    return np.exp(-1.0/2.0 * (u * u + v * v) * l * l) * np.cos(Cx * u + Cy * v)
 
 
 # Imaginary part of basis function
 def phiIm(u, v, l, Cx, Cy):
-    return np.exp(-2.0 * PI * (u * u + v * v) * l * l) * np.sin(2.0 * PI * (Cx * u + Cy * v))
+    return np.exp(-1.0/2.0 * (u * u + v * v) * l * l) * np.sin(Cx * u + Cy * v)
 
 
 def sintheticImage(I, Cx, Cy, l=10, IMAGE_SIZE_X=256, IMAGE_SIZE_Y=256):
@@ -53,4 +53,3 @@ def spectrum(I):
     I_fftAbs = np.abs(I_fft)
 
     return I_fft, I_fftAbs
-

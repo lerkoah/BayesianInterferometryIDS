@@ -203,6 +203,11 @@ def UVCreator(imgFFT,uv_matrix_bin):
 	return M,U,V
 
 def createSpectrumMasking(B_max,antennas,typeArray,sigma, lambda_phy, H0, delta0, Lat, N1 = 256, N2 = 256):
+
+	if typeArray == 'ALL':
+		return np.ones([N1,N2]).astype(int)
+
+
 	(positions,BMax) = antennas_position2(antennas,B_max,typeArray,sigma)
 	# print "positions = \n"+ str(positions)
 	# print "BMax = "+str(BMax)

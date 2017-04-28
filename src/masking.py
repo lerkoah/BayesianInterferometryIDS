@@ -159,7 +159,7 @@ def Gaussian2D(mu_i,mu_j,sigma,xx,yy):
 def completeSpectrumBaseFunction(baseFunction,SpectrumMask,SpectrumMatrix):
 
 	(nRows,nCols) = SpectrumMatrix.shape
-	print '('+str(nRows)+' , '+str(nCols)+')'
+	#print '('+str(nRows)+' , '+str(nCols)+')'
 	newSpectrum = SpectrumMatrix
 	newSpectrum.real = np.zeros((nRows,nCols))
 	newSpectrum.imag = np.zeros((nRows,nCols))
@@ -173,7 +173,7 @@ def completeSpectrumBaseFunction(baseFunction,SpectrumMask,SpectrumMatrix):
 					for y in range(nCols):
 						newSpectrum.real[x,y] += SpectrumMatrix.real[x,y]*baseFunction(mu_i,mu_j,sigma,x,y)
 						newSpectrum.imag[x,y] += SpectrumMatrix.imag[x,y]*baseFunction(mu_i,mu_j,sigma,x,y)
-				print 'Spectrum (',mu_i,',',mu_j,') added.'
+				#print 'Spectrum (',mu_i,',',mu_j,') added.'
 
 	return newSpectrum
 

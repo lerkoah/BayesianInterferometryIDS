@@ -27,10 +27,10 @@ def sintheticImage(I, Cx, Cy, l=10, IMAGE_SIZE_X=256, IMAGE_SIZE_Y=256):
     Im_out = np.zeros((IMAGE_SIZE_X, IMAGE_SIZE_Y))
 
     for i in range(Ns):
-        for x in range(IMAGE_SIZE_X):
-            for y in range(IMAGE_SIZE_Y):
+        for y in range(IMAGE_SIZE_Y):
+            for x in range(IMAGE_SIZE_X):
                 # print 'I(%i,%i) = %s' %(Cx[i],Cy[i],I[i]*psi(x,y,l,Cx[i],Cy[i]))
-                Im_out[x][y] = Im_out[x][y] + I[i] * psi(x, y, l, Cx[i], Cy[i])
+                Im_out[y][x] = Im_out[y][x] + I[i] * psi(x, y, l, Cx[i], Cy[i])
                 # print Im_out[x][y]
     return Im_out
 

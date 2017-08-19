@@ -1,5 +1,5 @@
 import numpy as np
-import cv2
+# import cv2
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.image as mpimg
@@ -122,7 +122,7 @@ def baselines(positions,lambdaPhy,Lat,H0,delta0):
 	return uvw_coordinates
 	# print uvw_coordinates.shape
 def discrete_freq(M,N,U_freq,V_freq):
-	
+
 	u_max = max(abs(U_freq))
 	v_max = max(abs(V_freq))
 	# print u_max," , ", v_max
@@ -159,7 +159,7 @@ def Gaussian2D(mu_i,mu_j,sigma,xx,yy):
 def completeSpectrumBaseFunction(baseFunction,SpectrumMask,SpectrumMatrix):
 
 	(nRows,nCols) = SpectrumMatrix.shape
-	print '('+str(nRows)+' , '+str(nCols)+')'
+	#print '('+str(nRows)+' , '+str(nCols)+')'
 	newSpectrum = SpectrumMatrix
 	newSpectrum.real = np.zeros((nRows,nCols))
 	newSpectrum.imag = np.zeros((nRows,nCols))
@@ -173,7 +173,7 @@ def completeSpectrumBaseFunction(baseFunction,SpectrumMask,SpectrumMatrix):
 					for y in range(nCols):
 						newSpectrum.real[x,y] += SpectrumMatrix.real[x,y]*baseFunction(mu_i,mu_j,sigma,x,y)
 						newSpectrum.imag[x,y] += SpectrumMatrix.imag[x,y]*baseFunction(mu_i,mu_j,sigma,x,y)
-				print 'Spectrum (',mu_i,',',mu_j,') added.'
+				#print 'Spectrum (',mu_i,',',mu_j,') added.'
 
 	return newSpectrum
 
@@ -185,8 +185,8 @@ def UVCreator(imgFFT,uv_matrix_bin):
 
 	numberOfMeasures = np.sum(np.sum(uv_matrix_bin))
 
-	U = np.zeros((numberOfMeasures,2))
-	V = np.zeros(numberOfMeasures,dtype=np.complex_)
+	U = np.zeros((numberOfMeasures, 2))
+	V = np.zeros((numberOfMeasures, 2))
 
 	k = 0
 	for u in range(N):
@@ -196,33 +196,17 @@ def UVCreator(imgFFT,uv_matrix_bin):
 
 				U[k,0] = u
 				U[k,1] = v
-				V.real[k] = np.real(measures[u,v])
-				V.imag[k] = np.imag(measures[u,v])
+				V[k,0]= np.real(measures[u,v])
+				V[k,1] = np.imag(measures[u,v])
 				k+=1
 	M = uv_matrix_bin*imgFFT;
 	return M,U,V
 
-def createSpectrumMasking(img, B_max,antennas,typeArray,sigma, lambda_phy, H0, delta0, Lat):
-	imgFFT = np.fft.fft2(img)
-	imgFFT = np.fft.fftshift(imgFFT)
+def createSpectrumMasking(B_max,antennas,typeArray,sigma, lambda_phy, H0, delta0, Lat, N1 = 256, N2 = 256):
 
-	# print type(imgFFT)
-	# print imgFFT.shape
-	# print type(img)
-	magnitudSpectrum = 20*np.log(np.abs(imgFFT))
-	# plt.imshow(magnitudSpectrum, cmap = 'gray')
-	# plt.show()
+	if typeArray == 'ALL':
+		return np.ones([N1,N2]).astype(int)
 
-	(N1,N2) = img.shape
-	#Size Inputs
-	# N1 = 256
-	# N2 = 256
-
-	## Position of antennas
-	# B_max = 1
-	# antennas = 60
-	# typeArray = 'VLA'
-	# sigma = B_max/6
 
 	(positions,BMax) = antennas_position2(antennas,B_max,typeArray,sigma)
 	# print "positions = \n"+ str(positions)
@@ -303,7 +287,7 @@ def createSpectrumMasking(img, B_max,antennas,typeArray,sigma, lambda_phy, H0, d
 def main():
 	ImageName = 'example.jpg'
 	img = cv2.imread(ImageName,0)
-	
+
 	B_max = 1
 	antennas = 60
 	typeArray = 'VLA'
@@ -320,5 +304,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-	
-

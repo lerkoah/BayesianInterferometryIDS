@@ -15,9 +15,7 @@ Download the linked file from there and do the following:
 
 ``bash
 tar xf CentOS-SCLo-scl-el7.tar.gz
-
 sudo cp ./etc/* /etc -rf
-
 sudo dnf install devtoolset-3-gcc-c++
 ``
 

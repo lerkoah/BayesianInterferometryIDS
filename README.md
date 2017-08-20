@@ -12,16 +12,20 @@ CUDA only works with GCC versions 4.9 or lower and Fedora 24 comes with GCC 6.1.
 ``https://drive.google.com/file/d/0B7S255p3kFXNSnR0TkJKbm5qMDQ/view?usp=sharing``
 
 Download the linked file from there and do the following:
+
 ``bash
 tar xf CentOS-SCLo-scl-el7.tar.gz
 sudo cp ./etc/* /etc -rf
 sudo dnf install devtoolset-3-gcc-c++
 ``
+
 After that if you run:
+
 ``bash
-scl enable devtoolset-3
+scl enable devtoolset-3 bash
 ``
-bash your path will be updated and you will be using GCC 4.9.2 which you can verify with a quick ``bash gcc --version``. GCC 4.9.2 will only be used for the duration of the terminal session.
+
+your path will be updated and you will be using GCC 4.9.2 which you can verify with a quick ``bash gcc --version``. GCC 4.9.2 will only be used for the duration of the terminal session.
 
 Install Tkinter
 ```bash

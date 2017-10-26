@@ -18,7 +18,7 @@ def phiIm(u, v, l, Cx, Cy):
     return np.exp(-1.0/2.0 * (u * u + v * v) * l * l) * np.sin(Cx * u + Cy * v)
 
 
-def sintheticImage(I, Cx, Cy, l, IMAGE_SIZE_X=256, IMAGE_SIZE_Y=256):
+def sintheticImage(I, Cx, Cy, l=10, IMAGE_SIZE_X=256, IMAGE_SIZE_Y=256):
     n_Cx = Cx.shape[0]
     n_Cy = Cy.shape[0]
     n_I = I.shape[0]
@@ -30,7 +30,7 @@ def sintheticImage(I, Cx, Cy, l, IMAGE_SIZE_X=256, IMAGE_SIZE_Y=256):
         for y in range(IMAGE_SIZE_Y):
             for x in range(IMAGE_SIZE_X):
                 # print 'I(%i,%i) = %s' %(Cx[i],Cy[i],I[i]*psi(x,y,l,Cx[i],Cy[i]))
-                Im_out[y][x] = Im_out[y][x] + I[i] * psi(x, y, l[i], Cx[i], Cy[i])
+                Im_out[y][x] = Im_out[y][x] + I[i] * psi(x, y, l, Cx[i], Cy[i])
                 # print Im_out[x][y]
     return Im_out
 

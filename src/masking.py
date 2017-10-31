@@ -100,7 +100,7 @@ def baselines(positions,lambdaPhy,Lat,H0,delta0):
 	#print XYZ_coordinates
 
 	#Calculating Baselines (Bx,By,Bz)
-	numberOfBaselines = antennas*(antennas-1)/2
+	numberOfBaselines = int(antennas*(antennas-1)/2)
 	Baselines = np.zeros((3,numberOfBaselines))
 
 	counter = 0
